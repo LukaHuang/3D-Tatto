@@ -5,4 +5,11 @@ body
     +main
 
 template(name="main")
-    p {{helloGuestbook}}
+    hr 
+    h3 Posts List:
+    hr
+    each listPosts
+        hr
+        p {{text}}
+        hr
+
