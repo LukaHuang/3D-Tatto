@@ -1,19 +1,36 @@
-if (Meteor.isClient) {
-  Template.hello.greeting = function () {
-    return "Welcome to hello-meteor.";
-  };
+var samplePostsData = [
+  {"text": "Meteor is great!"},
+  {"text": "Meteor is so nice!"},
+  {"text": "Meteor is the best!"}
+];
 
-  Template.hello.events({
-    'click input': function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-        console.log("You pressed the button");
-    }
+var Posts = new Meteor.Collection("myBookPosts");
+
+if (Meteor.isClient) {
+  Template.main.helpers({
+    "posts": Posts.find()
   });
+
+  Template.main.events({
+    "submit form": function(e){
+      e.preventDefault();
+      var post = {
+        "text": $(e.target).find("[name=text]").val()
+      };
+
+      post._id = Posts.insert(post);
+
+      $(e.target).find("[name=text]").val("");
+
+    }
+  })
 }
 
 if (Meteor.isServer) {
-  Meteor.startup(function () {
-    // code to run on server at startup
-  });
+  if (Posts.find().count() == 0){
+    Posts.insert(samplePostsData[0]);
+    Posts.insert(samplePostsData[1]);
+    Posts.insert(samplePostsData[2]);
+  }
+
 }
