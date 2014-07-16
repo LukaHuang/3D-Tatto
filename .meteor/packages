@@ -9,3 +9,5 @@ insecure
 jade
 coffeescript
 jquery
+accounts-ui
+accounts-password

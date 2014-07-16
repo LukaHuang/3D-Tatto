@@ -14,7 +14,3 @@ if Meteor.isClient
             post._id = Posts.insert(post)                 
 
             $(e.target).find('[name=text]').val("") 
-
-if Meteor.isServer
-    if Posts.find().count() == 0
-        Posts.insert post for post in PostsSampleData
