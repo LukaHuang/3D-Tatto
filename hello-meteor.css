@@ -1,1 +1,13 @@
 /* CSS declarations go here */
+.icon{
+	background-image: url("https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpf1/v/t34.0-12/10544937_780474225348653_1166337219_n.jpg?oh=bede6b122e3b92fafbd75be31c969522&oe=53C9C3BD&__gda__=1405752237_c65991cd859951a0a18bf22bb5ba52ff")
+	;
+    background-repeat:repeat;
+    width: 100%;
+   
+    display: inline-block;
+    border: 0px;
+    padding: 0px;
+    margin: 0; 
+ 
+}

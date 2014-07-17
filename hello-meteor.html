@@ -7,25 +7,24 @@
 </body>
 
 <template name="main">
-	<hr>
+  <div class="icon">
+	
 	<h2>
 		Posts List:
   	</h2>
-  	<hr>
+  	
 
   	{{#each posts}}
-  		<hr>
+  		
   		<p>
   			{{text}}
   		</p>
-  		<hr>
+  		
   	{{/each}}
 
 	<form>
 		<input type="text" name="text">
 		<input type="submit" value="Create">
 	</form>
-	
-
-
+</div>
 </template>
